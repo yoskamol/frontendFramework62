@@ -1,0 +1,80 @@
+<body>
+  <div class="container-fluid">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card">
+        <div class="card-header">
+          <h3>Register</h3>
+          <div class="d-flex justify-content-end social_icon">
+            <span><i class="fab fa-facebook-square"></i></span>
+            <span><i class="fab fa-google-plus-square"></i></span>
+            <span><i class="fab fa-twitter-square"></i></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="logo-container">
+            <img src="../../assets/logo_div.png" />
+          </div>
+          <form [formGroup]="registerForm">
+            <div class="input-group form-group">
+              <!-- เริ่มมกล่อง input -->
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-angle-double-down"></i></span>
+              </div>
+              <input formControlName="rank" type="text" class="form-control" placeholder="ยศ" />
+            </div><!-- จบกล่อง input -->
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input formControlName="first_name" type="text" class="form-control" placeholder="ชื่อ" />
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input formControlName="last_name" type="text" class="form-control" placeholder="นามสกุล" />
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+
+              <input formControlName="id_mil" type="text" class="form-control" placeholder="เลขประจำตัวทหาร" />
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input formControlName="unit_name" type="text" class="form-control" placeholder="สังกัด" />
+            </div>
+
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input formControlName="username" type="text" class="form-control" placeholder="username" />
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input formControlName="password" type="password" class="form-control" placeholder="password" />
+            </div>
+
+            <div class="form-group text-center mt-2">
+              <input (click)="onSubmit()" value="Register" class="btn login_btn" />
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex justify-content-center links">
+            Have an account?<a [routerLink]="['/login']">Login</a>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a href="#">Create by Weerayut</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
