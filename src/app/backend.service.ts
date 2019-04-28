@@ -34,4 +34,14 @@ export class BackendService {
       )
       .pipe();
   }
+
+  login(username: string, password: string) {
+    return this.http
+      .post<any>(
+        authServiceUrl + "login/login",
+        { username, password },
+        httpOptions
+      )
+      .pipe();
+  }
 }
