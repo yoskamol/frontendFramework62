@@ -19,35 +19,35 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.backendService.verifyToken().subscribe(
       data => {
-      if (!data.verify) {
-      Swal.fire({
-      type: 'error',
-      title: 'แจ้งเตือน',
-      text: 'ไม่มีสิทธิ์เข้าใช้งานในส่วนนี้'
-      })
-      this.backendService.logout();
-      this.router.navigate(["login"]);
-      } else {
-      if (this.backendService.decodeToken()) {
-      } else {
-      Swal.fire({
-      type: 'error',
-      title: 'แจ้งเตือน',
-      text: 'ไม่มีสิทธิ์เข้าใช้งานในส่วนนี้'
-      })
-      this.backendService.logout();
-      this.router.navigate(["login"]);
-      }
-      }
+        if (!data.verify) {
+          Swal.fire({
+            type: "error",
+            title: "แจ้งเตือน",
+            text: "ไม่มีสิทธิ์เข้าใช้งานในส่วนนี้"
+          });
+          this.backendService.logout();
+          this.router.navigate(["login"]);
+        } else {
+          if (this.backendService.decodeToken()) {
+          } else {
+            Swal.fire({
+              type: "error",
+              title: "แจ้งเตือน",
+              text: "ไม่มีสิทธิ์เข้าใช้งานในส่วนนี้"
+            });
+            this.backendService.logout();
+            this.router.navigate(["login"]);
+          }
+        }
       },
       err => {
-      Swal.fire({
-      type: 'error',
-      title: 'แจ้งเตือน',
-      text: 'ไม่มีสิทธิ์เข้าใช้งานในส่วนนี้'
-      })
+        Swal.fire({
+          type: "error",
+          title: "แจ้งเตือน",
+          text: "ไม่มีสิทธิ์เข้าใช้งานในส่วนนี้"
+        });
       }
-      );
+    );
 
     $(document).ready(function() {
       $("#sidebarCollapse").on("click", function() {
@@ -93,6 +93,5 @@ export class HomeComponent implements OnInit {
   logout() {
     this.backendService.logout();
     this.router.navigate(["login"]);
-    }
-   
+  }
 }
